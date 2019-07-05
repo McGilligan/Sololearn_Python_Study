@@ -1,0 +1,138 @@
+A BOOLEAN is a type of code in Python. A Boolean can only have two values: TRUE and FALSE.
+A Boolean value is determined when two values are compared. Two equals signs in succession
+is the operator used to perform these comparisons.
+
+	EXAMPLE: BOOLEAN VALUE
+
+>>>2 == 3
+>>># Returns the FALSE value
+
+>>>"hello" == "hello"
+>>># Returns the TRUE value
+
+A second comparison operator is the NOT EQUAL operator, symbolized by "!=". It is opposite to
+the former operator, returning TRUE when the two values are not equal and FALSE when they are.
+
+The greater than ">" and less than "<" operators are used in similar fashion, returning either
+True or False when two values are compared. These operators can be followed by an equals sign 
+to create the greater/less than or equal to operators ">=" , "<=". 
+
+
+IF statements "if" are used to run code so long as a specific condition is witheld. If an expression 
+is determine to be true, successive statements specified are carries out. Otherwise, it is not.
+
+It is important to remember that for Python, INDENTATION is used to delimit blocks of code, as 
+opposed to languages like C which use curly braces to do the same thing.
+
+	EXAMPLE: IF STATEMENT
+
+>>> x = 5
+>>> x += 2
+>>> print(x)
+7
+>>> x += 2
+>>> print(x)
+9
+>>> if x > 8:
+...     print ("x is greater than 8.")
+...
+x is greater than 8.
+
+
+	EXAMPLE TWO: IF STATEMENT
+
+x = 3
+x += 2
+x += 2
+if x>5:
+    print("x is greater than 5.")
+print("Then what is x?")
+print("x equals",x)
+
+"if" statements can be nested within one another to create more complex checks. This is a means to 
+determine whether multiple conditions are satified.
+
+An ELSE statement follows an "if" statment, and is used to determine what happens when the "if"
+statement is determined to be false.
+
+	EXAMPLE: ELSE STATEMENT
+
+x = 9
+print("What is the value of x?")
+if x > 10:
+    print("x is greater than 10.")
+else:
+    print("x is not greater than 10.")
+
+You can chain if and else statements to determine which option in a series of possibilities is 
+true.
+
+	EXAMPLE: IF ELSE CHAIN
+
+x = 9
+print("What is the value of x?")
+if x > 10:
+    print("x is greater than 10.")
+else:
+    if x < 5:
+        print("x is greater than five")
+    else:
+        print("x is between, but not equal to, 5 and 10.")
+if x == 6:
+    print("x is equal to 6.")
+else:
+    if x == 7:
+        print("x is equal to 7.")
+    else:
+        if x == 8:
+            print("x is equal to 8.")
+        else:
+            if x == 9:
+                print("x is equal to 9.")
+
+The "elif" statement is a shortcut to use when chaining if and else statements, to prevent 
+clutter. A series of "elif" statements can have a final "else" block, which is called if 
+none of the previous if or elif statements are met. 
+
+	EXAMPLE: ELIF CHAIN
+
+#The following is identical to the previous code, except
+#elif is used to simplify the notation.
+
+x = 9
+print("What is the value of x?")
+if x > 10:
+    print("x is greater than 10.")
+elif x < 5:
+    print("x is greater than five")
+else:
+    print("x is between, but not equal to, 5 and 10.")
+if x == 6:
+    print("x is equal to 6.")
+elif x == 7:
+    print("x is equal to 7.")
+elif x == 8:
+    print("x is equal to 8.")
+elif x == 9:
+    print("x is equal to 9.")
+
+BOOLEAN LOGIC is used to make more complicated conditions for "if" statements that rely on more
+than one condition. The Boolean operators in Python are "and", "or", and "not". Most other 
+languages use symbols like &&, ||, and ! for it's Boolean operators, in contrast to Python's
+use of words. 
+
+The "and" operator takes two arguments and evalutates as true only if both independent arguments
+are true. Otherwise, it is false.
+
+The "or" operator takes two arguments and evaluates as true if either one (or both) of the 
+arguments are true. Otherwise, it is false.
+
+The "not" operator takes one argument, and inverts it. 
+
+
+
+
+
+
+
+
