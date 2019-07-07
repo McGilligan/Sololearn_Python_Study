@@ -1,0 +1,178 @@
+OPERATOR PRECEDENCE is essentially an extension of the Order of Operations of mathematics, applied
+to certain functions in programming.  It is used to insert and apply Boolean operations (and, or,
+not) into a proper order in code. The examples on Sololearn seemed mediocre, so I will not be 
+copying them, rather it seems I'll have to internalize the Boolean rules over time. The key thing 
+it seems is that comparison operators (==, >, >=, etc.) have a very LOW PRIORITY.
+
+The priority of Python's operators are listed in order of highest precedence to lowest below:
+
+		HIGHEST:
+		**			Exponentiation
+
+		~, +, -			Complement, unary plus and minus (not sure what these are
+					yet, will pay attention in the future)
+
+		*,/,%,//		Multiply, Divide, Modulo and Floor Division		
+
+		+, -			Addition, Subtraction
+	
+		>>, <<			Right and Left Bitwise Shift (no idea yet)
+
+		&			Bitwise 'AND'
+	
+		^			Bitwise exclusive 'OR'
+
+		|			Bitwise 'OR'
+
+		in, not in, is,		Comparison Operators, Equality Operators,
+		is not, <, <=,		Membership and Identity Operators
+		>, >=, !=, ==		
+
+		not			Boolean 'NOT'
+			
+		and			Boolean 'AND'
+
+		or			Boolean 'OR'
+
+		=, %=, /=, //=,		Assignment Operators
+		-=, +=, *=, **=
+
+A WHILE statement is similar to an IF statement, with a fundamental difference. An 'if' statement
+runs once if its stated condition is True, and never if it evaluates False. A 'while' statement 
+will run multiple times, or infinitely, if the condition remains to be true. When the condition
+evaluates to be False, the next section of code is then executed.  This is of course useful for
+linear approximations and other recursive mathematics functions. 
+
+	EXAMPLE: WHILE LOOP
+
+i = 1
+print("i is equal to ",i)
+while i <= 20:
+    i = i + 1
+print("i has been increased incrementally to",i)
+
+#the fourth line can be simplified using assignment operators for an identical result
+i = 1
+print("i is equal to ",i)
+while i <= 20:
+    i += 1
+print("i has been increased incrementally to",i)
+
+ITERATION is the term for the repetition of code in the body of a loop.
+
+An INFINITE loop is, as said earlier, a while loop whose condition for activation always remains
+True. This causes the program to run indefinitely until terminated. In Python, the command for 
+terminating a program's execution is 'Ctrl + C'.
+
+The BREAK statement is used to prematurely end a while loop through a condition governed by the 
+break statement. This is useful for preventing while loops from running infinitely if there is 
+no assurance that the loop will reach a natural conclusion. I imagine it's this sort of thing that
+is used to determine that a computed approximation is close enough for when the solution is 
+ultimately irregular.
+
+	EXAMPLE: INFINITE LOOP WITH BREAK
+
+n = 0
+while 100 == 100:
+    print(n)
+    n += 1
+    if n >= 20:
+        print("Code is infinite, breaking")
+        break
+print("Code stopped")
+
+CONTINUE is a second statement that functions within a loop. In opposition to break, 'continue'
+causes the loop to immediately progress back to the top of the loop, rather than stop. It is 
+used to skip or terminate a present iteration but continue looping the same code.
+
+	EXAMPLE: WHILE LOOP WITH CONTINUE
+
+n = 0
+while True:
+    n = n + 1
+    if n == 2:
+        print("Skipping 2")
+        continue
+    if n == 7:
+        print("Breaking")
+        break
+    print(n)
+print("Code finished.")
+
+LISTS are used in Python to store an indexed list of items. A matrix structure is used to create
+a list. A variable is equated to a bracketed list of items separated by commas. It is important
+to note that the first item in a list is indexed as item number 0, not 1.
+
+	EXAMPLE: LIST
+
+shopping = ["bananas","apples","spinach","carrots"]
+print(shopping[0])
+print(shopping[1])
+print(shopping[3])
+
+An empty list can be created by defining a variable and equating it to an empty set of square
+brackets. This is useful for defining a list which will have items assigned to it at a later
+time.
+
+Lists generally will contain items of a single type, but this is not required. A list can be 
+defined to possess integers, strings, variables, and even other lists nested within it.
+
+	EXAMPLE: MULTI-TYPE LIST	
+
+variable = 246
+sillylist = ["a word",1,2.2,["nestedlistitem1","nestedlistitem2",variable]] 
+print(sillylist[0])
+print(sillylist[1])
+print(sillylist[2])
+print(sillylist[3])
+
+A string can be indexed into a list. The list behaves as though each character in the string is
+being indexed in order.
+
+An item at a certain index in a list can be reassigned to a new value. This is done by specifying
+the index number and equating it to the new value.
+
+	EXAMPLE: REASSIGNING LIST VALUES
+
+list1 = [1,2,3,4,5]
+print(list1)
+list1[0] = -1
+list1[4] = 10
+print(list1)
+
+Lists can be added and multiplied in the same way as STRINGS. It's important to note here that 
+this does not perform matrix addition or multiplication if the list is composed of integers or
+floats, it simply adds new values to the list or repeats the existing list.
+
+	EXAMPLE: LIST ADDITION AND MULTIPLICATION
+
+list2 = [2,4,6,8]
+print(list2 + [10,12])
+print(list2*2)
+
+The IN operator can be used to determine whether or not an item is present within a list. The
+function returns True if the item occurs one or more times, and False if the item is not present.
+
+	EXAMPLE: IN OPERATOR 
+
+animals = ['dog','cat','rabbit','deer','bird']
+print('dog' in animals)
+print('snake' in animals)
+print('deer' in animals)
+
+if "rabbit" in animals:
+	print("Yes")
+if "fish" in animals:
+	print("Yes")
+else:
+	print("No")
+
+The NOT operator is used similarly to the 'in' operator. Whereas 'in' determines if a value exists
+within a list, 'not' determines if a value is not present in a list.
+
+
+
+
+
+
+
