@@ -1,0 +1,86 @@
+Lists can be altered using the APPEND method.  This adds an item to the end of an existing list,
+instead of replacing an item specifically through referencing its index.
+
+	EXAMPLE: APPEND
+
+list = [2, 4, 6, 8]
+list.append(10)
+print(list)
+
+A quick note here is that a METHOD is different than a FUNCTION. They are similar, and the 
+differences are likely to be explained later, but a method uses a '.' to attach to an object.
+
+The LEN function provides the number of items in a list.
+
+	EXAMPLE: LEN
+
+list = [10, 20, 30, 40, 50, 60, 70]
+print(len(list))
+
+The INSERT method (another method) is similar to append, except it allows for the specification 
+of position for the item inserted in the list. I suppose 'append' is mostly for when order doesn't
+matter and a simpler function is quicker and easier.
+
+	EXAMPLE: INSERT
+
+grillfood = ["burgers","hot dogs","steak","brats"]
+index = 1
+grillfood.insert(index,"spaghetti?!?")
+print(grillfood)
+
+Yet another method is INDEX, which searches a list for the first occurence of a specified item and
+returns its index number. If the specified item does not exist in the list, it raises a ValueError.
+
+	EXAMPLE: INDEX
+
+Fish = ['cod','bass','trout','salmon','shark']
+print(Fish.index('cod'))
+print(Fish.index('tuna'))
+
+Several other useful list functions and methods are given below:
+
+		'max'(list) : Returns the max value item of the list.
+		'min'(list) : Returns the min value item of the list.
+		list.'count'(obj) : Gives a count of how many times an item appears in a list.
+		list.'remove'(obj) : Removes an object from a list.
+		list.'reverse'(): Reverses the object order in a list.
+
+The RANGE function creates a sequential list of numbers. This is obviously useful for specifying 
+increments for use in recursive functions later on. It's infinitely useful to not have to type 
+out a range every time.
+
+	EXAMPLE: RANGE
+
+repetitions = list(range(100))
+print(repetitions)
+
+Note here that it must be specified that a list is being created to store this range, as opposed 
+to simply equating a variable to the range function.  Apparently if the 'list' is not used, 
+the 'range' function creates a RANGE OBJECT, which is a thing that will likely be explained later.
+
+Range can be used with multiple arguments. If one argument (number) is specified, it will
+produce an object with values from 0 to that number.  If two arguments are given, it will 
+create values from the first number to the second.
+
+	EXAMPLE: RANGE WITH TWO ARGUMENTS
+
+increments1 = list(range(10))
+print(increments1)
+
+increments2 = list(range(5,15))
+print(increments2)
+
+Always remember that the last number specified in the 'range' function is not included in the
+list, as the list begins from the first number and ends at the number before the second number.
+
+Range can have a third argument. This argument determines the interval of the sequence produced.
+This third argument must be an integer.  This one is likely to be the version of the function
+used the most.
+
+	EXAMPLE: RANGE WITH THREE ARGUMENTS
+
+values = list(range(3,18,3))
+print(values)
+
+
+
