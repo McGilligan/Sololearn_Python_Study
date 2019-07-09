@@ -1,0 +1,163 @@
+A loop can be used to perform code on each item in a list. This is called iteration.
+
+	EXAMPLE: LOOP APPLIED TO LIST
+
+snacks = ["chips",'cookies','candy','gum','pretzels']
+snacks.append('crackers')
+snacks.insert(2,'raisins')
+
+n = 0
+m = len(snacks) - 1
+
+while n <= m:
+    snackchoice = snacks[n]
+    print(snackchoice + " is/are on the menu today!")
+    n += 1
+
+Note that when setting the max index value for repeating the loop (determining m) it is also 
+possible to not subtract 1 from the len(snacks) function and instead have the loop repeat until
+n < m, not n <= m.  This creates an identical output for less code written.
+
+Iterating through a list using a while loop requires a lot of code. The FOR loop accomplishes the
+same thing with less input, similar to how ELIF replaces the cumbersome notation of else and if
+in succession.
+
+	EXAMPLE: FOR LOOP
+
+print('Now for the \'for\' loop option:')
+
+snacks = ["chips",'cookies','candy','gum','pretzels']
+snacks.append('crackers')
+snacks.insert(2,'raisins')
+
+for snackchoice in snacks:
+    print(snackchoice + " is/are on the menu today!")
+
+In other languages, the 'for' loop is called something like 'foreach'.
+
+The 'for' loop is very often paired with the 'range' function. The range function quickly defines
+a range object (a span of numbers for the loop to iterate through) and the for function tells
+Python to repeat the loop for the full span of numbers.
+
+	EXAMPLE: FOR LOOP WITH RANGE
+
+for n in range(0,11,2):
+    print("I\'ll take " + str(n) + " please.")
+
+It seems like the big difference between a range object and a list created through the range 
+function is that the range object isn't being indexed.  It seems that the range values are created
+for the loop but are not stored, which likely allows for quicker running of code (less to be
+stored and indexed). 
+
+
+	BEGINNER PROJECT: CREATING A SIMPLE CALCULATOR
+
+"As it is, this code crashes if the user enters a non-numeric input when prompted to enter a
+number. We will look at fixing problems like this in a later module."
+
+# SIMPLE CALCULATOR
+
+while True:
+    print('Options:')
+    print('Enter \'add\' to add two numbers')
+    print('Enter \'subtract\' to subtract two numbers')
+    print('Enter \'multiply\' to multiply two numbers')
+    print('Enter \'divide\' to divide two numbers')
+    print('Enter \'quit\' to end the program.')
+    user_input = input(': ')
+    
+    if user_input == "quit":
+        break
+    elif user_input == 'add':
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        result = str(num1 + num2)
+        print("The answer is " + result)
+    elif user_input == 'subtract':
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        result = str(num1 - num2)
+        print("The answer is " + result)
+    elif user_input == 'multiply':
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        result = str(num1 * num2)
+        print("The answer is " + result)
+    elif user_input == 'divide':
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        result = str(num1 / num2)
+        print("The answer is " + result)
+    else:
+        print("Unknown input, please try again")
+
+
+A quick note read from stackoverflow:
+A 'while True' loop is an infinite loop until it is actively broken. The active breaking requires
+a break condition or some other function that would allow the code to stop running. Inversely,
+a 'while False' loop simply never executes.  A 'while' loop only executes the body of the loop
+if the expression after the while evaluates to a 'True' value.  Hardcoding the expression to 
+'False', or any other expression that would be a false value, has no use other than to ensure
+the loop block is executed. The only reasonable use I've read is that it allows for the blocking
+of certain bits of code in a longer program, as opposed to simply commenting all the code out,
+which is likely to take longer.
+
+
+Reusing code is an integral part of computer programming. The more code, the more clutter, so 
+keeping the code as simple as possible is a huge asset. This principle is known as the DON'T 
+REPEAT YOURSELF principle, an integral tenet of programming. The inverse of this is called WET
+programming, which stands for WRITE EVERYTHING TWICE. Obviously, DRY is good, WET is bad.
+
+This is somewhat review, but more like defining things used already. Any statement that consists
+of a word followed by information in parentheses is a FUNCTION CALL. The function is the first
+term, which dictates what is being done. The value or values within the parentheses are called
+ARGUMENTS.
+
+Many arguments are pre-defined in Python (or all coding languages, for that matter), but functions
+can also be created by using the DEF statement. I'm sure it's short for "define."
+
+	EXAMPLE: CREATING A FUNCTION
+
+def custom_function():
+    print("You")
+    print("are")
+    print("silly")
+
+custom_function()
+
+Of course this is obvious, but if you attempt to call a custom function before it appears in the
+code, it won't work.  Just as a variable must be defined before use, a function must be defined
+before use.
+
+In contrast to the example before where the custom function accepted no argument, most custom
+functions will.
+
+	EXAMPLE: CUSTOM FUNCTION WITH ONE ARGUMENT
+
+def insult_enhancer(insult):
+    print('You\'re a dirty, stinking ' + insult + '!')
+
+insult_enhancer('coward')
+
+	EXAMPLE: CUSTOM FUNCTION WITH TWO ARGUMENTS
+
+def how_stinky(a,b):
+    stink_factor = str(a * b)
+    print("You are " + stink_factor + " stinky.")
+
+how_stinky(2,5)
+
+I seemed to already figure this out, but variables can be defined and used within a functions 
+definition. However, these variable definitions can NOT be referenced outside of the functions 
+definition. The technical term for the variables in a function definition are called PARAMETERS,
+while ARGUMENTS are the values put into parameters when functions are called. For example, trying
+to print(stink_factor) would error, even though the variable is defined in my previous example.
+
+
+
+
+
+
+
+    
+
