@@ -1,0 +1,86 @@
+Certain functions return a value that can be used later in the code. ('int', 'str') This can also
+be done for user defined functions by using the RETURN statement.
+
+	EXAMPLE: RETURN FUNCTION IN USER DEFINED FUNCTION
+
+def max(a,b,c):
+    if a >= b:
+        if a >= c:
+            return a
+        else:
+            return c
+    elif b >= c:
+        return b
+    else:
+        return c
+
+print(max(2, 10, 5))
+print(max(4, 5, 6))
+print(max(100, 50, 0))
+
+'return' can ONLY be used within a function definition. Once a value is returned from a function,
+it immediately stops being executed. Any code after the return function will not be run.
+
+COMMENTS are annotations used to make the code easier to understand.  I've obviously used them 
+already, so this is rather basic.  All text after the '#' symbol is ignored, whether it is used at
+the beginning of the line or if it was placed after a line of code.  The hash symbol, or 
+OCTOTHORPE, must be used again at the start of every line that is intended to be commented out.
+
+DOCSTRINGS, or documentation strings, are similiar to comments in that they are designed to explain
+code.  However their use is more specific and possesses a different syntax.  They are created 
+by making a multiline string below a custom functions first line, and typing an explanation of the
+function in the string.
+
+	EXAMPLE: DOCTRINGS
+
+def shout(word):
+	"""
+	Prints a word with an exclamation mark after it.
+	"""
+	print(word + "!")
+
+shout("Woah")
+
+The use of this is that the explanation is carried with the function, rather than leaving the 
+comment behind at a specific point in the code.
+
+While functions are created different than normal variables, they can be assigned and reassigned to
+different variables and referenced by whatever variable they were given.
+
+	EXAMPLE: REASSIGNING FUNCTION NAME
+
+def max(a,b,c):
+    if a >= b:
+        if a >= c:
+            return a
+        else:
+            return c
+    elif b >= c:
+        return b
+    else:
+        return c
+
+biggest_number = max
+
+print(biggest_number(2,4,3))
+
+Note that 'max()' is still the defined function, but the new variable 'biggest_number' is now tied
+to the function and can be used to access it as well.
+
+Functions can be used as arguments of other functions.  This of course seems complicated, but I'm 
+sure is much easier than nesting the full code of an earlier function into a new one.  It also 
+creates less visual clutter I'm sure. 
+
+	EXAMPLE: FUNCTION WITHIN FUNCTION
+
+def sum(x,y):
+	return x + y
+
+def do_twice(func,x,y):
+	return func(func(x,y),func(x,y))
+
+print(do_twice(add,2,3))
+
+Here, 'func' is a variable name for whatever function the user would decide to use within the
+second function.
+
