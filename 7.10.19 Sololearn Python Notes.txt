@@ -1,0 +1,93 @@
+The programmer seems to be able to define variables through simple use of an equals sign. Just use the
+usual parentheses quotation combo to define a variable as simple text and not input.
+
+The INPUT command is similar to the print command, only it prompts the user for a response input.
+
+	EXAMPLE: INPUT
+
+a = input('How old are you? ')
+
+print(a)
+
+
+
+b = input('What is your purpose here? ')
+
+print(b)
+
+This program, when run, would then have the user respond to each of the questions stated within the input bracket.
+Ensure a space is added after the question so that the prompted response is not placed immediately adjacent to
+the question. It looks better that way.
+
+CONCATENATION is the addition of two or more strings.
+It seems that the addition symbol is used for this. The use of concatenation will likely become more clear
+with time and further explanation. (Likely to merge two smaller strings into one single larger one for clarity
+when many numerous strings begin to get involved in a program)
+
+	EXAMPLE: MERGING STRINGS
+
+a = ('I want to go to the movies')
+
+b = ('I want to dance')
+
+
+
+print(a + ", and " + b)
+
+Strings and numbers cannot be concatenated. They are distinct entities. 
+Remember, strings are bound by quotes, numbers are not.
+
+Strings CAN be multiplied by integers, with the produced result being a repeated version of the original string.
+This seems to be less so of math, and more so of shorthand for duplicating a string.
+Strings must be multiplied by an integer, not a float nor a second string.
+
+TYPE CONVERSION is the process by which a type of data is turned into a different type, for example from a string
+to an integer. The functions for the types used so far are "int", "float", and "str".
+
+	EXAMPLE: TYPE CONVERSION
+
+print("2" + "3")
+
+
+
+print(int("2") + int("3"))
+
+
+
+
+It is seen that the first result produces a combined string which yields "23", an undesired result. The follow up
+code properly converts the two strings to two integers, which then are properly added to output the desired "5".
+From what I've gathered, the potentially simpler operation would be to define a variable as the sum of the two
+integers being added, and then to print the variable. Or to even simplerly print the integer addition without 
+quotes. Though I'm sure they were just trying to illustrate type conversion.
+
+a = 2 + 3
+
+
+print (a)
+
+
+print(2 + 3)
+
+Okay, so the type conversion from string to integer is important because it converts a string of user input into 
+an integer value (or a float).
+
+	EXAMPLE: CONVERTING USER INPUT
+
+print(float(input("Enter a number: ")) + float(input("Enter another number: ")))
+
+The user entering "1" and "2" will then output "3", instead of "12".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
