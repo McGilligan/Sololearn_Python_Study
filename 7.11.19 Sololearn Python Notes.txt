@@ -1,0 +1,90 @@
+MODULES are pieces of code that other people have written to fulfill common tasks. Examples of 
+these tasks are generating random numbers, performing math, things of that sort. From the looks of
+it, modules are more often than not completely rewritten, but rather imported from external 
+sources for use in one's code when needed.  
+
+To import a module, add 'import module_name' at the top of the code, and then use 'module_name.var'
+to access functions and values with the name 'var' within that module.  So it seems that import is
+obviously the function to identify and use the external module, 'module_name' is a metasyntatic
+name for whatever module is being used, and '.var' is the desired variable from the module.
+
+	EXAMPLE: IMPORTING MODULE
+
+import random
+
+for i in range(5):
+	value = random.randint(1,6)
+	print(value)
+
+
+There are likely many modules prewritten in python that I will have to discover and remember as 
+time goes on.
+
+One can also specifically import certain functions or variables from a module alone. I assume this
+would be done to minimize runtime, as importing one variable or function is likely far less
+demanding than gathering the whole module. 
+
+	EXAMPLE: IMPORTING SPECIFIC VALUE FROM MODULE
+
+from math import pi
+
+print(pi)
+
+
+Obviously, importing a module that does not exist, does not work. So don't do that.
+
+An addition to the previous function is that the imported specific function or variable can be 
+imported under a different name by adding the AS command after listing said function or variable.
+This is useful if the original name is cumbersome, unclear, or just generally disliked.
+
+	EXAMPLE: CHANGING NAME OF IMPORTED FUNCTION OR VARIABLE
+
+from math import sqrt as square_root
+
+print(square_root(49))
+
+
+There are three main types of modules in Python.
+1: Those one writes themselves.
+2: Those one installs from external sources.
+3: Those preinstalled with Python.
+
+The third type is called the STANDARD LIBRARY, and is generally very useful.  Several standard 
+library modules of note are:
+
+string, re, datetime, math, random, os, 
+multiprocessing, subprocess, socket, email, 
+json, doctest, unittest, pdb, argparse and sys.
+
+I of course do not know what any of these do, though I'm sure I will find out with time.
+Sololearn says:
+"Tasks that can be done by the standard library include string parsing, data serialization, 
+testing, debugging and manipulating dates, emails, command line arguments, and much more!"
+So I will believe them.
+
+Some of the standard library modules are written in Python, and some are written in C. Most can 
+be used on all platforms but some are specific to Windows or Unix.
+
+Third-party modules for Python are often stored on the PYTHON PACKAGE INDEX, or PyPI.  These 
+programs can be easily installed through use of pip, a Python standard software.  To install a 
+module from PyPI, use pip to look up the name of the library desired, go to the command line 
+(Command Prompt), and enter 'pip install library_name'.  Once this is done, the library can be
+imported just like any other module and used in one's code. 
+
+Foreign libraries are usually accessed through pip, but many can still be found and downloaded 
+like any other executable file used to download a program.
+
+
+
+[Module 3 Quiz]
+
+
+
+
+
+
+
+
+
+
+
