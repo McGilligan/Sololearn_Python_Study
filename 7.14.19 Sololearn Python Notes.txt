@@ -1,0 +1,118 @@
+EXCEPTIONS occur when something in code goes wrong, due to either incorrect code or input. This 
+was an issue for example with the simple calculator we created, where the user could type a letter
+or a word instead of an integer, and would error out the program.  When an exception occurs, the 
+program immediately stops.  
+	
+	EXAMPLE: ZERODIVISIONERROR EXCEPTION 
+
+num1 = 5
+num2 = 0
+print(num1 / num2)
+
+
+Most exceptions are pretty obvious in the reason for their existence. Several exceptions are
+listed below:
+
+	ImportError: an import fails.
+	IndexError: a list is indexed with an out-of-range number.
+	NameError: an unknown variable is used.
+	SyntaxError: the code can't be parsed properly.
+	TypeError: a function is called on a value of an inappropriate type.
+	ValueError: a function is called on a value of the correct type, but with an 
+		inappropriate value.
+
+The first three errors are self explanatory. SyntaxError seems to refer to simply wrong code. The
+last two examples are also self explanatory.  It should also be noted that third-party libraries
+will usually define their own exceptions.
+
+To handle exceptions, and to call code when an exception occurs, one can use a TRY/EXCEPT 
+statement. This is a statement formed in two blocks: the 'try' block, which is a block of code
+which may contain an exception. If an exception occurs, the code in the 'try' block stops being
+executed, and the code in the 'except' block is run. If no error occurs, the except block is not
+run.
+
+	EXAMPLE: TRY/EXCEPT STATEMENT
+
+try:
+  	num1 = 5
+   	num2 = 0
+   	print (num1 / num2)
+   	print("Calculation complete")
+except ZeroDivisionError:
+  	 print("Calculation could not be completed")
+   	print("due to zero division")
+
+
+A 'try' statement can possess multiple different 'except' blocks for handling multiple different 
+types of exceptions. A single 'except' block can define one or more types of exceptions to trigger
+its activation, or an 'except' block can be created to define a response for each type of 
+excption desired individually.
+
+	EXAMPLE: MULTIPLE EXCEPT STATEMENTS
+
+try:
+  	 variable = 10
+  	 print(variable + "hello")
+ 	 print(variable / 2)
+except ZeroDivisionError:
+ 	 print("Divided by zero")
+except (ValueError, TypeError):
+  	 print("Error occurred")
+
+
+If no specific exception is listed in the 'except' statement, the statement will instead
+encompass all errors.  This is advised against, likely because it makes for lazy programming.
+Exception handling in the broad sense is useful particularly when handling user input.  A 
+programmer should know what his code should do, whereas a user may attempt to input something
+without knowing that it is inappropriate.
+
+
+To ensure that some code runs no matter what errors occur, one can use a FINALLY statement.  The
+'finally' statement is placed at the bottom of a try/except statement.  Code within a 'finally' 
+statement will always run after the execution of the code in the try, and possibly except (if the
+except statement triggers), blocks.
+
+	EXAMPLE: FINALLY STATEMENT
+
+try:
+  	 print("Hello")
+  	 print(1 / 0)
+except ZeroDivisionError:
+ 	 print("Divided by zero")
+finally:
+ 	 print("This code will run no matter what")
+
+
+One can raise exceptions by using the RAISE statement. I do not yet know what it means to raise an
+exception, however. I think it merely means to cause an exception on purpose.  Seems pretty
+worthless of an act at this time, though I'm sure it has a niche use sometime.
+
+	EXAMPLE: RAISING AN EXCEPTION
+
+print(1)
+raise ValueError
+print(2)
+
+
+As is seen, there is no issue with the first and third line of code, and yet the output yields a
+'ValueError', so it does seem to be the case that it simply forces the error upon the code.
+Useful for testing an exception block without actually writing a try block of code that will fail
+in a particular way?
+
+Raised exceptions can possess arguments to give more detail about their cause.
+
+	EXAMPLE: RAISING AN EXCEPTION WITH ARGUMENT
+
+name = "123"
+raise NameError("Invalid name!")
+
+
+In except blocks, the raise statement can be used without arguments to re-raise whatever 
+exception occurred.  I guess this is useful for simply providing the error in output when an
+exception occurs in code.  Or in other words, rather than the script CAUSING the actual error,
+you have programmed a response for that error, which shows that you've been planning a contingency
+block for the situation in which the error occurs.
+
+
+
+
