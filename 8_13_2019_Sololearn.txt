@@ -1,0 +1,82 @@
+An ASSERTION is a sanity-check that you can turn on or turn off when you have
+finished testing the program. I do not know yet what a sanity-check is though. 
+
+An expression is tested, and if the result comes up false, an exception is raised.
+Assertions are carried out through the use of the assert statement.
+
+	EXAMPLE: ASSERTION
+
+print(1)
+assert 2 + 2 == 4
+print(2)
+assert 1 + 1 == 3
+print(3)
+
+In response, the code prints 1, then 2, then raises an AssertionError.  Seems a bit 
+silly, but I assume in ACTUAL use, the assertion statement would be used to check
+input against an accepted type of input, for example asserting that the user entered
+in a number (or integer) against a number value.
+
+Sololearn then says that programmers often place assertions at the start of a function
+to check for valid input, and after a function call to check for valid output. So I 
+guess my explanation sort of makes sense.
+
+The ASSERT function can take a second argument that is passed to the AssertionError
+raised if the assertion fails. In other words, it provides a response to trigger when
+an AssertionError is raised.
+
+	EXAMPLE: ASSERTION SECOND ARGUMENT
+
+temp = -10
+assert (temp >= 0), "Colder than absolute zero!"
+
+This is the first example of assertion that actually uses the assertion to test if a
+type of code entered (in this case, the variable) is of an appropriate value.
+
+
+Python can be used to read and write the contents of files. Text files are the easiest
+to manipulate.  Before a file can be edited, it must be opened, using the OPEN 
+function.
+
+	EXAMPLE: OPEN FUNCTION
+
+myfile = open("filename.txt")
+
+The argument of the OPEN function is the path to the file. If the file is in the 
+current working directory of the program, you can specify only its name.
+
+
+You can specify the mode used to open a file by applying a second argument to the OPEN
+function.
+Sending "r" means open in read mode, which is the default.
+Sending "w" means write mode, for rewriting the contents of a file.
+Sending "a" means append mode, for adding new content to the end of a file.
+
+Adding "b" to a mode opens it in binary mode, which is used for non-text files (such as
+image and sound files).
+
+	EXAMPLE: OPEN FUNCTION WITH SECOND ARGUMENT
+
+# write mode
+open("filenameplaceholder.txt","w")
+
+# read mode
+open("filenameplaceholder2.txt","r")
+open("filenameplaceholder2.txt")
+# these two are of course the same, functionally
+
+# binary write mode
+open("filenameplaceholder3.txt","wb")
+
+You can use the + sign with each of the modes above to give them extra access to files. 
+For example, r+ opens the file for both reading and writing.
+
+Once a file has been opened and used, it should be closed. I assume this is another 
+one of those "good practice" habits, which in the end allow for less cluttered code
+and likely faster, more efficient programs.
+
+	EXAMPLE: CLOSING An OPENED FILE
+
+file = open("filename.txt","w")
+# do stuff to the file
+file.close()
