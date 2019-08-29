@@ -1,0 +1,71 @@
+To open a file, use the OPEN function.
+
+myfile = open("filename.txt")
+
+The mode in which a file is opened can be specified by applying a second argument to the OPEN 
+function.
+"r" is added to open in read mode, which is the default.
+"w" is added to open in write mode.
+"a" is added to open in append mode, which adds new content to the end of the file.
+
+A "b" is added immediately after one of the former options to open in binary mode, which is used 
+for non-text files (sound or image files).
+
+open("filename.txt","r")
+open("filename.txt")
+
+open("filename.txt","w")
+
+open("filename.txt","wb")
+
+Once an opened file is done being used, it should be closed using the CLOSE method.
+
+file = open("filename.txt","w")
+% perform stuff to the file
+file.close()
+
+The contents of a file that has been opened in text mode can be read using the READ method.
+
+file = open("filename.txt","r")
+cont = file.read()
+print(cont)
+file.close()
+
+An argument can be applied to the read function to read only a certain amount of a file. This 
+determines the number of bytes that should be read.
+Additional calls to read on the same file object read more of the file byte by byte. With no 
+argument, read will return the rest of the file.
+
+file = open("filename.txt","r")
+print(file.read(16))
+print(file.read(4))
+print(file.read(4))
+print(file.read())
+file.close()
+
+After all the contents of a file have been read, any further read attempts will return an empty
+string.
+
+file = open("filename.txt","r")
+file.read()
+print("Re-reading")
+print(file.read())
+print("Finished")
+file.close()
+
+To retrieve each line in a file, you can use the READLINES method to return a list in which each
+element is a line in the file.
+
+file = open("filename.txt")
+print(file.readlines())
+file.close()
+
+One can also use a for loop to iterate through the lines in a file.
+
+file = open("filename.txt","r")
+
+for line in file:
+	print(line)
+
+file.close()
+
