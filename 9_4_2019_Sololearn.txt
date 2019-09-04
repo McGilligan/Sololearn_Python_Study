@@ -1,0 +1,61 @@
+To write to files one uses the WRITE method, which writes a string to the file.
+
+file = open("newfile.txt","w")
+file.write("This has been written to a file")
+file.close
+
+file = open("newfile.txt","r")
+print(file.read())
+file.close()
+
+When a file is opened in write mode, the file's existing content is deleted. This content is 
+deleted IMMEDIATELY, regardless of whether any new strings are added.
+
+file = open("newfile.txt","r")
+print("Reading initial contents")
+print(file.read())
+print("Finished")
+file.close()
+
+file = open("newfile.txt","w")
+file.write("This file has been overwritten")
+file.close()
+
+file = open("newfile.txt","r")
+print("Reading new contents")
+print(file.read())
+print("Finished")
+file.close()
+
+The WRITE method returns the number of bytes written to a file, if successful.
+
+msg = "Hello world!"
+file = open("newfile.txt","w")
+amount_written = file.write(msg)
+print(amount_written)
+file.close()
+
+It is good practice to avoid wasting resources by making sure that files are always closed after
+they have been used. This is something that I assumed earlier when they said to close files 
+when not needed. One way of doing this is to use TRY and FINALLY.
+
+try:
+	f = open("filename.txt")
+	print(f.read())
+finally:
+	f.close()
+
+The real purpose of doing this, rather than doing the same thing without the try and finally
+statements, is because if one attempts to close a file and there is an error, it may not close,
+thusly continuing to devour resources. The try + finally method ensures that the file is always
+closed, even if an error occurs.
+
+An alternative method of ensuring a file closes is through use of WITH statements. This creates
+a temporary variable (often called f), which is only accessible in the indented block of the 
+with statement.
+
+with open("filename.txt") as f:
+	print(f.read())
+
+The file is automatically closed at the end of the WITH statement, even if exceptions occur 
+within it.
