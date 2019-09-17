@@ -1,0 +1,91 @@
+The None object is used to represent the absence of a value.
+
+It is similar to null in other programming languages. 
+
+Like other empty values, such as 0, [], and the empty string, it is False when converted to a 
+Boolean variable.
+
+When entered at the Python console, it is displayed as the empty string.
+
+The None object is returned by any function that doesn't explicitly return anything else.
+
+	EXAMPLE:
+
+def some_func():
+	print("Hi!")
+
+var = some_func()
+print(var)
+
+
+The first two lines of the example are the user defining a function using the def keyword. That
+function when called simply prints Hi!. The following two lines are the user matching the defined
+function to a variable, and then attempting to print that variable. In the first of these lines, 
+var is said to be the function. Because of this, the function is run, and Hi! is printed. In the 
+second of these lines, var itself is attempted to be printed, but because var has no definition 
+itself, it returns None. I think the example is somewhat poor.
+
+Actually, an external explanation clarifies. The last line becomes print(print("Hi!")). This
+causes the console, operating in proper order, to first print("Hi!") to the console, and then 
+leaves in a position where the outer print() has no object to operate on, because the function we
+defined (print("Hi!")) RETURNS NO STATEMENT. Because nothing is returned, the outer print ends up
+operating on nothing, yielding a None statement.
+
+
+Dictonaries are data structures used to map arbitrary keys to values. 
+Lists can be thought of as dictonaries with integer keys within a certain range.
+Dictionaries can be indexed in the same way as lists, using square brackets containing keys.
+
+	EXAMPLE:
+
+ages = {"Dave":24,"Mary":42,"John":58}
+print(ages["Dave"])
+print(ages["Mary"]
+
+The first line defines the dictionary. Square brackets are used, and keywords or keys are tied to
+a value for recall later. The second and third lines each call for these values by entering in 
+the key that these values are tied to, and then print the values.
+
+Each element in a dictionary is represented by a KEY:VALUE pair.
+
+Trying to index (or display/access) a key that isn't part of the dictionary returns a KeyErorr.
+
+	EXAMPLE: 
+
+Primary = {
+	"red":[255,0,0],
+	"green":[0,255,0],
+	"blue":[0,0,255],
+}
+
+print(primary["red"])
+print(primary["yellow"])
+
+Here the first line indexes the value attached to the key "red" which is stored in the primary 
+dictionary, and then prints that value. The second line attempts to do the same but for a key 
+that has not been defined within the library. Hence, a KeyError.
+
+An empty dictionary is defined as {}. 
+
+Only IMMUTABLE objects can be used as keys to dictionaries. Immutable objects are those that 
+can't be changed (duh). So far, the only mutable objects we've come across are lists and 
+dictionaries. Trying to use a mutable object as a dictionary key causes a TypeError.
+
+	EXAMPLE: 
+
+bad_dict = {
+	[1,2,3]:"one two three",
+}
+
+The first line defines the dictionary to a name, and the second line attempts to use a list as a
+key which would then be used to call the value "one two three". There is no issues with the value
+here, as the value has no restrictions. However the key cannot be a list, and so the attempted 
+key does no work, causing a TypeError.
+
+
+
+
+
+
+
+
