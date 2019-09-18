@@ -1,0 +1,99 @@
+Just like lists, dictionary keys can be assigned to different values.
+However, unlike lists, a new dictionary key can also be assigned a value, not just ones that 
+already exist. 
+
+	EXAMPLE:
+
+squares = {1:1,2:4,3:"error",4:16,}
+
+squares[8] = 64
+squares[3] = 9
+
+print(squares)
+
+The result of this code is a printing of the entirety of the squares dictionary, with the
+newly added key:value pair of 8:64, and with the replacement value of 9 attached to the
+3 key.
+
+To determine whether a key is in a dictionary, you can use IN and NOT IN, just as you can
+for a list.
+
+	EXAMPLE:
+
+nums = {
+	1:"one"
+	2:"two"
+	3:"three"
+}
+print(1 in nums)
+print("three" in nums)
+print(4 not in nums)
+
+The return to this code is True, False, then True again. This is because the in and not in
+commands parse the code for keys, not values, so despite the string "three" being present in
+the dictionary, the function did not return it as True.
+
+A useful dictionary method is GET. It does the same thing as indexing, but if the key is not
+found in the dictionary it returns another specified value instead ('None', by default).
+
+	EXAMPLE:
+	
+pairs = {1:"apple",
+	"orange":[2,3,4],
+	True:False,
+	None:"True",
+}
+
+print(pairs.get("orange"))
+print(pairs.get(7))
+print(pairs.get(1234,"not in dictionary."))
+
+The first block of code creates the dictionary for the get method to be performed on. Simple
+enough, it shows that an integer, a string, a boolean, and a null value can all be used as 
+keys in a dictionary due to their immutable nature. The values vary as well, from string, to
+list, to boolean, to string again. 
+The second block of code attempts to print certain values from the dictionary by retrieving
+them through the get method. The first line uses get to retrieve the value for the key 
+"orange", which is then printed. The second line uses get to retrieve the value for the 
+integer 7, which does not exist in the dictionary, so None is returned. The third line uses
+get on the integer 1234, which does not exist in the dictionary like the value before it. 
+This time though, a follow up value is listed in the get method to provide an alternative 
+value, which is returned.
+
+
+TUPLES are very similar to lists, except that they are immutable (they cannot be changed).
+Also, they are created using parentheses, rather than square brackets.
+
+	EXAMPLE:
+
+words = ("spam","eggs","sausages",)
+
+I will rewrite it again now for repetitions sake: the only difference between a Tuple and a
+List is the use of parentheses rather than square brackets. Lists are square brackets, 
+Tuples are round parentheses. 
+
+Values in a tuple can be accessed with their index, just as was done with lists.
+
+print(words[0])
+
+Trying to reassign a value in a tuple causes a TypeError.
+
+words[1] = "cheese"
+
+Tuples can be created without the parentheses, by just separating the values with commas.
+
+	EXAMPLE:
+
+my_tuple = "one","two","three"
+print(my_tuple[0])
+
+An empty tuple is created using an empty parenthesis pair.
+
+Unrelated note, a single ( is called a parenthesis, not parentheses. It never crossed my 
+mind before that parentheses is the plural form, or that there would even be a singular 
+form. How odd.
+
+The note at the end of the lesson states that tuples are faster than lists, but at the
+expense of their ability to be altered. I'm sure the consequences of this will become more 
+apparent as time goes on. 
+
